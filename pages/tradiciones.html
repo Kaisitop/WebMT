@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tradiciones Navales | ESSUNA</title>
+    <link rel="stylesheet" href="../css/tradiciones.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Navegación principal del sitio">
+       <ul class="site-nav__list">
+          <li class="site-nav__item">
+            <a href="../index.html" class="site-nav__link">Inicio</a>
+          </li>
+          <li class="site-nav__item">
+            <a href="tradiciones.html" class="site-nav__link">Tradiciones</a>
+          </li>
+          <li class="site-nav__item">
+            <a href="historia.html" class="site-nav__link">Historia</a>
+          </li>
+          <li class="site-nav__item">
+            <a href="marineria.html" class="site-nav__link">Marinería</a>
+          </li>
+          <li class="site-nav__item">
+            <a href="procedimientos.html" class="site-nav__link"
+              >Procedimientos</a
+            >
+          </li>
+          <li class="site-nav__item">
+            <a href="instruccion.html" class="site-nav__link active"
+              >Instrucción</a
+            >
+          </li>
+          <li class="site-nav__item">
+            <a href="nosotros.html" class="site-nav__link">Nosotros</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="site-main">
+      <section class="content-section traditions-hero">
+        <header class="essuna-intro__header">
+          <h1 class="content-section__title">Tradiciones y Mística Naval</h1>
+          <p class="content-section__subtitle">
+            El espíritu y los valores que forjan a nuestros futuros oficiales de
+            Marina.
+          </p>
+        </header>
+<!--  -->
+        <div class="traditions-content-wrapper">
+          <p class="traditions-intro-text">
+            Las **tradiciones navales** son el corazón de la Armada del Ecuador.
+            Ellas infunden respeto, disciplina y un profundo sentido de
+            pertenencia. Desde el uso correcto del uniforme hasta el ceremonial
+            de los himnos, cada acto honra la historia y el compromiso con la
+            patria.
+          </p>
+          <p class="traditions-intro-text">
+            La observancia de estos códigos es fundamental en la formación del
+            cadete, garantizando el respeto a la jerarquía y el legado heroico
+            de la institución.
+          </p>
+        </div>
+      </section>
+
+      <section id="himnos-oficiales" class="content-section is-himnos">
+        <h2 class="content-section__title">Himnos Oficiales</h2>
+
+        <div class="himnos-grid">
+          <article class="himno-card" id="himno-nacional">
+            <div class="himno-card__header">
+              <i class="fas fa-flag himno-icon"></i>
+              <h3 class="himno-card__title">Himno Nacional del Ecuador</h3>
+            </div>
+            <p class="himno-card__description">
+              El más alto símbolo de la nación, interpretado con el máximo
+              respeto y solemnidad en todos los actos oficiales.
+            </p>
+
+            <div class="himno-letras">
+              <div class="himno-letra-completa">
+                <p>¡Salve oh Patria, mil veces! ¡Oh Patria!</p>
+                <p>gloria a ti! Ya tu pecho rebosa</p>
+                <p>gozo y paz, y tu frente radiosa</p>
+                <p>más que el sol contemplamos lucir.</p>
+
+                <p class="estrofa-separador">I</p>
+                <p>Los primeros los hijos del suelo</p>
+                <p>que el soberbio Pichincha decora,</p>
+                <p>te aclamaron por siempre señora,</p>
+                <p>y vertieron su sangre por ti.</p>
+                <p>Dios miró y aceptó el holocausto,</p>
+                <p>y esa sangre fue el germen fecundo</p>
+                <p>de otros héroes que, atónito, el mundo</p>
+                <p>vio en tu torno a millares surgir.</p>
+              </div>
+            </div>
+
+            <button class="btn-expandir-himno" data-target="himno-nacional">
+              <span class="text-mostrar">Leer Letra Completa</span>
+              <span class="text-ocultar" style="display: none"
+                >Ocultar Letra</span
+              >
+              <i class="fas fa-chevron-down"></i>
+            </button>
+
+            <div class="himno-card__actions">
+              <audio controls class="himno-audio">
+                <source src="../audio/himno_nacional.mp3" type="audio/mp3" />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </div>
+          </article>
+
+          <article class="himno-card" id="himno-armada">
+            <div class="himno-card__header">
+              <i class="fas fa-ship himno-icon"></i>
+              <h3 class="himno-card__title">Himno de la Armada del Ecuador</h3>
+            </div>
+            <p class="himno-card__description">
+              Canto que exalta la misión naval, el coraje en el mar y el
+              compromiso con la defensa de la soberanía marítima.
+            </p>
+
+            <div class="himno-letras">
+              <div class="himno-letra-completa">
+                <p class="estrofa-separador">Coro</p>
+                <p>Siempre al rumbo la noble Marina</p>
+                <p>Bajo el bello y sagrado tricolor</p>
+                <p>Proclamando por mares y por ríos</p>
+                <p>La suprema grandeza del Ecuador</p>
+
+                <p class="estrofa-separador">Estrofa I</p>
+                <p>De los Andes magníficos al Guayas</p>
+                <p>Vibra en todos los pechos el ardor</p>
+                <p>Que la Armada mantiene cual un fuego</p>
+                <p>Encendido en patriótico fervor</p>
+
+                <p class="estrofa-separador">Estrofa II</p>
+                <p>Persiguiendo la audaz trayectoria</p>
+                <p>Que la Armada nos manda a cumplir</p>
+                <p>Zarparemos al mar de la gloria</p>
+                <p>A vencer con valor o a morir</p>
+
+                <p class="estrofa-separador">Coro</p>
+                <p>Siempre al rumbo la noble Marina</p>
+                <p>Bajo el bello y sagrado tricolor</p>
+                <p>Proclamando por mares y por ríos</p>
+                <p>La suprema grandeza del Ecuador</p>
+              </div>
+            </div>
+            <button class="btn-expandir-himno" data-target="himno-armada">
+              <span class="text-mostrar">Leer Letra Completa</span>
+              <span class="text-ocultar" style="display: none"
+                >Ocultar Letra</span
+              >
+              <i class="fas fa-chevron-down"></i>
+            </button>
+
+            <div class="himno-card__actions">
+              <audio controls class="himno-audio">
+                <source src="../audio/himno_armada.mp3" type="audio/mp3" />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </div>
+          </article>
+
+          <article class="himno-card" id="himno-essuna">
+            <div class="himno-card__header">
+              <i class="fas fa-anchor himno-icon"></i>
+              <h3 class="himno-card__title">
+                Himno de la Escuela Superior Naval
+              </h3>
+            </div>
+            <p class="himno-card__description">
+              La marcha que inspira a los cadetes, recordando los ideales de
+              honor y disciplina en la formación de Oficiales de Marina.
+            </p>
+
+            <div class="himno-letras">
+              <div class="himno-letra-completa">
+                <p class="estrofa-separador">Coro</p>
+                <p>Escuela, Escuela Naval</p>
+                <p>Que harás de nosotros</p>
+                <p>Los lobos de mar</p>
+                <p>Carrera, carrera querida</p>
+                <p>Que fuiste escogida Por ser ideal</p>
+                <p>Será orgullo y honor</p>
+                <p>Ser guardiamarina y luego oficial</p>
+
+                <p class="estrofa-separador">Estrofa I</p>
+                <p>Cumplir, cumplir el deber</p>
+                <p>Y a la patria dar La vida y el ser</p>
+                <p>Triunfando veremos clarear</p>
+                <p>Un nuevo y fecundo Rumbo de honor</p>
+                <p>Y siempre tendremos en alto</p>
+                <p>Nuestro tricolor Que es nuestro amor.</p>
+
+                <p class="estrofa-separador">Estrofa II</p>
+                <p>Cantemos a la juventud</p>
+                <p>Que en gesto viril Desea triunfar</p>
+                <p>Marchemos más firmes que ayer</p>
+                <p>pues nuestro deber es reivindicar</p>
+
+                <p>Las penas que sufre la Patria</p>
+                <p>Ya que su dolor Y sus alegrías son nuestras</p>
+                <p>Por el gran amor Que a ella debemos</p>
+                <p>Los hijos de hoy</p>
+
+                <p class="estrofa-separador">Coro (Repetición)</p>
+                <p>Triunfando veremos clarear</p>
+                <p>Un nuevo y fecundo Rumbo de honor</p>
+                <p>Y siempre tendremos en alto</p>
+                <p>Nuestro tricolor Que es nuestro amor.</p>
+              </div>
+            </div>
+            <button class="btn-expandir-himno" data-target="himno-essuna">
+              <span class="text-mostrar">Leer Letra Completa</span>
+              <span class="text-ocultar" style="display: none"
+                >Ocultar Letra</span
+              >
+              <i class="fas fa-chevron-down"></i>
+            </button>
+
+            <div class="himno-card__actions">
+              <audio controls class="himno-audio">
+                <source src="../audio/himno_essuna.mp3" type="audio/mp3" />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="tradiciones-basicas" class="content-section is-tradiciones">
+        <h2 class="content-section__title">Tradiciones Básicas de la ESSUNA</h2>
+        <p class="content-section__subtitle">
+          Los pilares de honor, disciplina y mística que guían la formación de
+          los cadetes.
+        </p>
+
+        <div class="tradiciones-grid">
+          <article class="tradicion-card">
+            <i class="fas fa-bell tradicion-icon"></i>
+            <h3 class="tradicion-card__title">Diana General</h3>
+            <p class="tradicion-card__description">
+              Alza arriba, trinca el coy Cuerpo vago y descansado. Se acabó la
+              vida horizontal Comienza la vida vertical. Levántate a trabajar:
+              Diana general, diana general
+            </p>
+          </article>
+
+          <article class="tradicion-card">
+            <i class="fas fa-ship tradicion-icon"></i>
+            <h3 class="tradicion-card__title">Mural de la Planchada</h3>
+            <p class="tradicion-card__description">
+              El buque de guerra es un claustro heroico, no entréis en esa
+              religión si no os sentís con la vocación sublime, pues mientras
+              seáis allí depositario de la bandera de la patria, cualquier
+              debilidad humana puede arrastraros al deshonor
+            </p>
+          </article>
+
+          <article class="tradicion-card">
+            <i class="fas fa-archway tradicion-icon"></i>
+            <h3 class="tradicion-card__title">Mural de la Cámara</h3>
+            <p class="tradicion-card__description">
+              Por estas puertas pasamos día a día hombres que fortalecemos
+              nuestro cuerpo y espíritu ya que todo cuanto sucede en nuestras
+              vidas se explica únicamente por lo que nos habrá de pasar al final
+            </p>
+          </article>
+
+          <article class="tradicion-card">
+            <i class="fas fa-fire-alt tradicion-icon"></i>
+            <h3 class="tradicion-card__title">Llama Eterna</h3>
+            <p class="tradicion-card__description">
+              "Llama eterna que permanecerá encendida para siempre, recordando a
+              las futuras generaciones, el espíritu de sacrificio, que debe
+              observar en todo momento el futuro oficial de marina
+            </p>
+          </article>
+
+          <article class="tradicion-card">
+            <i class="fas fa-gavel tradicion-icon"></i>
+            <h3 class="tradicion-card__title">Oración del Fusil</h3>
+            <p class="tradicion-card__description">
+              He aquí mi fusil Hay muchos como él, Pero éste es el mío, Debo ser
+              su dueño Como soy dueño de mi vida Sin mí es inútil, Sin él no
+              sirvo para nada En la guerra lo que importa no es Ni el humo del
+              combate, Ni el rugir de los cañones, Sino el número de disparos
+              efectivos En el corazón del enemigo
+            </p>
+          </article>
+
+          <article class="tradicion-card">
+            <i class="fas fa-handshake-angle tradicion-icon"></i>
+            <h3 class="tradicion-card__title">Réplica Marinera</h3>
+            <p class="tradicion-card__description">
+              Tú que hablas tantas cosas de la vida del mar ¿Has sido marinero
+              alguna vez? Te has hallado venciendo el temporal O arriando un
+              contrafoque en el bauprés Sabes lo que es la amura o el combés La
+              carlinga, la escota o el penol Orzar, ponerse al pairo o trincar
+              coy Cazaste un cachalote alguna vez Con el golpe certero de tu
+              arpón Tú, en que velero fuiste capitán. Tú nunca fuiste marinero
+              Balurdo ganapán de malecón Que no conoces más que el vaivén De las
+              lanchas entorno al espigón. Para decir ¡yo soy marinero! Hay que
+              haberse empapado el corazón Con la espuma salobre de las olas
+              Mucho antes de alargarse el pantalón. Hay que tener el tórax
+              ampuloso Y la voz potente del diapasón Para hacerse escuchar entre
+              las cofas En medio del potente ventarrón. Hay que saber besar a
+              las mujeres Olvidándose siempre del amor, Y mantenerse firme entre
+              las jarcias Después de haber bebido mucho ron. Haber recorrido el
+              mundo puerto a puerto De Beirut a Estocolmo, de Callao a Bangkok Y
+              haber surcado el mar sin ver tierra Desde el golfo de Penas hasta
+              el Mar de Japón Y tú, que nunca tuviste el coraje de zarpar De ese
+              pueblo apacible en que naciste Y te la vienes a dar de marinero.
+              Tú nunca fuiste marinero Porque apenas conoces la emoción Del
+              vaivén de las lanchas que navegan Del malecón al muelle Y del
+              muelle al malecón
+            </p>
+          </article>
+
+          <article class="tradicion-card">
+            <i class="fas fa-crosshairs tradicion-icon"></i>
+            <h3 class="tradicion-card__title">Lealtad</h3>
+            <p class="tradicion-card__description">
+              Si usted trabaja para alguien, por Dios trabaje para él, hable
+              bien de él, y sea fiel a la institución que él representa.
+              Recuerde que una onza de lealtad vale por una libra de talento. Si
+              usted tiene que murmurar, condenar o encontrar faltas
+              constantemente, entonces es mejor que renuncie a su puesto, y
+              cuando esté fuera de él, dé rienda suelta a la maldad de su
+              corazón. Pero mientras sea parte de la institución, no la censure,
+              pues si lo hace, la primera ráfaga de viento que pase se lo
+              llevará, y usted probablemente sabrá por qué
+            </p>
+          </article>
+
+          <article class="tradicion-card">
+            <i class="fas fa-bolt-lightning tradicion-icon"></i>
+            <h3 class="tradicion-card__title">Rebeldía</h3>
+            <p class="tradicion-card__description">
+              Señor no estoy conforme con mi suerte ni con la dura ley que has
+              decretado, pues no hay razón bastante fuerte para que me hayas
+              hecho un desgraciado. Te he pedido justicia, te he pedido que
+              aplaques mi dolor y calmes mis penas y no has querido oírme o no
+              has podido revocar tu sentencia en mi condena. Casi nada te debo y
+              no me queda nada, sino un amor inmensamente triste, yo saldaré mis
+              cuentas cuando pueda devolverte la vida que me diste
+            </p>
+          </article>
+
+          <article class="tradicion-card">
+            <i class="fas fa-book-open tradicion-icon"></i>
+            <h3 class="tradicion-card__title">Versos de Thomas Gray</h3>
+            <p class="tradicion-card__description">
+              Si ambas luces de un vapor Por tu proa has avistado Debes caer a
+              estribor Dejando ver tu encarnado. "Si da verde con el verde O
+              encarnado con su igual Entonces nada se pierde Sigue su rumbo cada
+              cual. Si a estribor vez colorado Debes con cuidado obrar, Gobierna
+              a uno u otro lado, Modera, para o manda a ciar. Si acaso por babor
+              El verde se deja ver Sigue adelante ojo visor Débase el otro
+              mover. Y estad siempre vigilante Y ten presente además Que si hay
+              peligro por delante Modera, para o manda a ciar.
+            </p>
+          </article>
+
+          <article class="tradicion-card">
+            <i class="fas fa-scroll tradicion-icon"></i>
+            <h3 class="tradicion-card__title">
+              Versos de Calderón de la Barca
+            </h3>
+            <p class="tradicion-card__description">
+              Aquí la principal hazaña es obedecer y el modo como ha de ser es
+              ni pedir ni rehusar. Aquí en fin la cortesía, el buen trato, la
+              verdad, la firmeza, la lealtad, el valor, la bizarría, el crédito,
+              la opinión, la constancia, la paciencia, la humildad, la
+              obediencia, fama, honor y vida son caudal de nobles marinos que en
+              buena o en mala fortuna la milicia no es más que una religión de
+              hombres honrados
+            </p>
+          </article>
+
+          <article class="tradicion-card">
+            <i class="fas fa-dharmachakra tradicion-icon"></i>
+            <h3 class="tradicion-card__title">Campana de la Sala Olimpo</h3>
+            <p class="tradicion-card__description">
+              Que me oigan en alta mar, y a través de la tormenta me logréis
+              escuchar valeroso marino, repícame con justa razón, y si fuera en
+              vano, tu paga decidirá el Señor Director
+            </p>
+          </article>
+
+          <article class="tradicion-card">
+            <i class="fas fa-clipboard-list tradicion-icon"></i>
+            <h3 class="tradicion-card__title">Reglamento Disciplina Militar</h3>
+            <p class="tradicion-card__description">
+              En el combate jamás debe retroceder de su puesto salvo que se le
+              ordene, ejecutará prontamente las órdenes animando con su ejemplo
+              a sus compañeros y subalternos mostrándose primero donde el
+              peligro es mayor, afrontará intrépidamente todo peligro, haciendo
+              conciencia en los demás de que entre las acciones bellas y
+              gloriosas que pueden honrar a la humana naturaleza, ninguna igual
+              a la de morir por la patria
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="site-footer__copyright">
+        &copy; <time datetime="2025">2025</time> Armada del Ecuador | ESSUNA.
+        Todos los derechos reservados.
+      </p>
+      <div class="site-footer__links">
+        <a href="/politica-privacidad">Política de Privacidad</a>
+        <a href="/terminos-uso">Términos de Uso</a>
+        <a
+          href="https://facebook.com/armadaecuador"
+          target="_blank"
+          aria-label="Síguenos en Facebook"
+          class="social-icon"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a
+          href="https://instagram.com/armadaecuador"
+          target="_blank"
+          aria-label="Síguenos en Instagram"
+          class="social-icon"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          href="https://tiktok.com/@armadaecuador"
+          target="_blank"
+          aria-label="Síguenos en TikTok"
+          class="social-icon"
+        >
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script src="../js/tradiciones.js"></script>
+  </body>
+</html>

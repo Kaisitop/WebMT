@@ -1,0 +1,542 @@
+/* styles.css - Diseño Profesional Militar */
+
+/* ========================================= */
+/* 1. RESET Y VARIABLES BÁSICAS */
+/* ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Paleta de Colores Revisada para un look más militar */
+    --color-primary: #000;    /* Azul Marino Oscuro, casi negro */
+    --color-secondary-dark: #2F4F4F; /* Gris Pizarra Oscuro / Verde Oliva oscuro para fondos */
+    --color-accent: #C7B447;     /* Dorado/Bronce para acentos y resaltar */
+    --color-text-light: #f8f9fa; /* Blanco muy suave para texto en fondos oscuros */
+    --color-text-dark: #212529;  /* Negro casi puro para texto en fondos claros */
+    --color-background-light: #EAECEE; /* Gris muy claro para secciones de contenido */
+    --color-border: #99A9B4;     /* Gris azulado para bordes sutiles */
+    
+    /* Tipografía Profesional (Montserrat para títulos, Open Sans para cuerpo) */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    --font-size-base: 1rem; /* Base un poco más pequeña, luego escalamos */
+
+    /* Espaciado */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 48px;
+    --max-width: 1200px;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: var(--color-background-light);
+    font-size: var(--font-size-base);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* ========================================= */
+/* 2. ENCABEZADO Y NAVEGACIÓN (HEADER y NAV) */
+/* ========================================= */
+.site-header {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: var(--spacing-sm) 5vw;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--color-accent); /* Borde acentuado */
+}
+
+.site-header__logo a {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700; 
+    color: var(--color-text-light); 
+    white-space: nowrap; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.site-header__logo a:hover {
+    color: var(--color-accent);
+}
+
+.site-nav__list {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.site-nav__link {
+    font-family: var(--font-heading);
+    color: var(--color-text-light);
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+.site-nav__link::after { /* Subrayado interactivo */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.site-nav__link:hover::after,
+.site-nav__link.active::after { /* `active` para la página actual si la implementas */
+    width: 100%;
+}
+.site-nav__link:hover {
+    color: var(--color-accent); /* Cambiar color del texto al pasar el ratón */
+}
+
+
+/* ========================================= */
+/* 3. SECCIONES DE CONTENIDO (MAIN y SECTION) */
+/* ========================================= */
+
+.content-section {
+    padding: var(--spacing-lg) 0; 
+    text-align: center;
+    border-bottom: 1px solid var(--color-border); /* Borde sutil entre secciones */
+}
+.content-section:last-of-type {
+    border-bottom: none;
+}
+
+/* Contenedor interno para limitar el ancho del texto */
+.content-section > * {
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--spacing-md);
+}
+
+.content-section__title {
+    font-family: var(--font-heading);
+    margin-bottom: var(--spacing-xs);
+    font-size: 3rem;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+}
+
+.content-section__title::after { /* Subrayado debajo del título */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
+}
+
+.content-section__subtitle {
+    font-family: var(--font-body);
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-secondary-dark);
+    font-weight: 400;
+}
+
+/* --- Introducción ESSUNA (Video y Texto) --- */
+.essuna-intro {
+    background-color: var(--color-text-light);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08); /* Sombra más definida */
+}
+
+.intro-content-wrapper {
+    display: flex;
+    gap: var(--spacing-lg); /* Más espacio entre video y texto */
+    align-items: flex-start; 
+    text-align: left;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.essuna-intro__media {
+    flex: 0 0 50%; /* Más énfasis en el video */
+    max-width: 50%;
+    border: 3px solid var(--color-border); /* Borde para el video */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.essuna-intro__text {
+    flex: 1; 
+    padding-left: var(--spacing-md);
+    font-size: 1.05rem;
+    color: var(--color-text-dark);
+}
+
+.essuna-intro__text p {
+    margin-bottom: var(--spacing-sm);
+}
+
+.essuna-intro__text p strong {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+
+/* Video Responsivo */
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    background-color: #000; /* Fondo negro mientras carga */
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* --- FUNCIÓN BÁSICA --- */
+.essuna-function {
+    background-color: var(--color-background-light);
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg); 
+    text-align: center;
+    max-width: 900px; /* Ancho ajustado */
+    margin: 0 auto;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.essuna-function .content-subsection__title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 3px solid var(--color-accent);
+    display: inline-block;
+    margin-bottom: var(--spacing-sm);
+}
+
+.essuna-function p {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-style: normal; /* No cursiva */
+    color: var(--color-secondary-dark);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+/* --- VALORES INSTITUCIONALES (HONOR, DISCIPLINA, LEALTAD) --- */
+.essuna-values {
+    background-color: var(--color-text-light); 
+    padding: var(--spacing-lg) 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.values-grid {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg); /* Mayor espacio entre tarjetas */
+    max-width: var(--max-width);
+    margin: var(--spacing-md) auto;
+    text-align: center;
+}
+
+.value-card {
+    flex: 1 1 30%;
+    padding: var(--spacing-md) var(--spacing-sm);
+    border-radius: 6px;
+    background-color: var(--color-background-light);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.value-card__icon {
+    font-size: 3.5rem; /* Iconos más grandes */
+    color: var(--color-accent); /* Color de acento para los iconos */
+    display: block;
+    line-height: 1;
+    margin-bottom: var(--spacing-sm);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.value-card__title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.value-card__description {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--color-text-dark);
+}
+
+/* Ocultar el título de sección (se usa para accesibilidad) */
+.content-subsection__title.is-hidden {
+    display: none;
+}
+
+
+/* --- CITA DESTACADA (QUOTE OF THE DAY) --- */
+.quote-of-the-day {
+    background-color: var(--color-primary); /* Fondo azul oscuro principal */
+    color: var(--color-text-light);
+    padding: calc(var(--spacing-lg) * 2) 0;
+    text-align: center;
+    border-top: 5px solid var(--color-accent); /* Borde superior fuerte */
+}
+
+.quote-content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.quote-of-the-day__text {
+    font-family: var(--font-body); /* Fuente para la cita */
+    font-size: 2.2rem;
+    font-style: italic;
+    line-height: 1.4;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text-light);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
+}
+
+.quote-of-the-day__logo {
+    max-width: 180px; /* Logo un poco más grande */
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5)); /* Sombra para el logo */
+}
+
+.quote-of-the-day__caption {
+    margin-top: var(--spacing-sm);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.quote-of-the-day__caption .author-name {
+    font-family: var(--font-heading);
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-accent);
+    letter-spacing: 1px;
+}
+
+.quote-of-the-day__caption .author-title {
+    font-family: var(--font-body);
+    display: block;
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    opacity: 0.8;
+}
+
+/* ========================================= */
+/* 4. PIE DE PÁGINA (FOOTER) */
+/* ========================================= */
+.site-footer {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: var(--spacing-md) var(--spacing-md);
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 3px solid var(--color-accent); /* Borde superior para el footer */
+}
+
+.site-footer__copyright {
+    margin-bottom: var(--spacing-xs);
+    font-family: var(--font-body);
+    opacity: 0.9;
+}
+
+.site-footer__links {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
+.site-footer__links a {
+    font-family: var(--font-body);
+    color: var(--color-text-light);
+    padding: 0 12px; /* Espacio horizontal */
+    margin: 5px 0;
+    position: relative;
+    opacity: 0.9;
+}
+.site-footer__links a:not(.social-icon)::after { /* Separador vertical para los enlaces de texto */
+    content: '|';
+    position: absolute;
+    right: -2px; /* Ajusta la posición del separador */
+    color: var(--color-text-light);
+    opacity: 0.5;
+}
+.site-footer__links a:last-of-type:not(.social-icon)::after {
+    content: none; /* Eliminar separador del último enlace de texto */
+}
+
+.site-footer__links a:hover {
+    color: var(--color-accent);
+    opacity: 1;
+}
+
+/* Estilo específico para los iconos sociales */
+.social-icon {
+    font-size: 1.5rem; /* Iconos más grandes en el footer */
+    margin: 0 10px; /* Espacio entre iconos */
+    color: var(--color-text-light); /* Color predeterminado */
+    padding: 5px; /* Un poco de padding para el hover */
+    border-radius: 50%; /* Hacerlos circulares si se quiere fondo */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--color-accent); /* Cambio de color al pasar el ratón */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo sutil al pasar el ratón */
+}
+
+/* ========================================= */
+/* 5. MEDIA QUERIES (Diseño responsivo) */
+/* ========================================= */
+@media (max-width: 992px) {
+    
+    /* Navbar en móviles */
+    .site-header {
+        flex-direction: column;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .site-header__logo {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .site-nav__list {
+        gap: var(--spacing-sm);
+        margin-top: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    /* Contenido de la sección de héroe apilado */
+    .intro-content-wrapper {
+        flex-direction: column; 
+        align-items: center;
+        gap: var(--spacing-md);
+    }
+    
+    .essuna-intro__media,
+    .essuna-intro__text {
+        flex: 0 0 100%; 
+        max-width: 100%;
+        padding-left: 0;
+        text-align: center; /* Centrar texto en móvil */
+    }
+
+    .essuna-intro__text p {
+        text-align: left; /* Mantener texto justificado en parrafos */
+        padding: 0 var(--spacing-xs);
+    }
+    
+    /* VALORES: Apilamiento en móvil */
+    .values-grid {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+
+    .value-card {
+        flex: 1 1 100%;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    
+    /* Cita destacada en móvil */
+    .quote-of-the-day__text {
+        font-size: 1.7rem;
+    }
+
+    .content-section__title {
+        font-size: 2.2rem;
+    }
+
+    .essuna-function .content-subsection__title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Ajustes para móviles pequeños */
+    :root {
+        --spacing-md: 12px;
+        --spacing-lg: 24px;
+        --font-size-base: 0.95rem;
+    }
+
+    .content-section__title {
+        font-size: 1.8rem;
+    }
+    .content-section__subtitle {
+        font-size: 1.1rem;
+    }
+
+    .site-nav__link {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+    
+    .site-footer__links a {
+        margin: 5px 8px;
+    }
+
+    .quote-of-the-day__text {
+        font-size: 1.4rem;
+    }
+
+    .social-icon {
+        font-size: 1.2rem;
+    }
+}
