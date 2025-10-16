@@ -493,3 +493,11 @@ a {
         font-size: 1.2rem;
     }
 }
+
+.custom-icon {
+    width: 3rem !important;  /* Ajusta al tamaño de tus otros iconos */
+    height: auto !important;
+    display: block;
+    margin: 0 auto 1rem auto;
+    object-fit: contain; 
+}
