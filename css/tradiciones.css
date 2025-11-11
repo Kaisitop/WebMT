@@ -13,11 +13,11 @@
     /* Paleta de Colores Profesional y Militar */
     --color-primary: #000;      /* Azul Marino Oscuro, casi negro */
     --color-secondary-dark: #2F4F4F; /* Gris Pizarra Oscuro / Verde Oliva oscuro para fondos */
-    --color-accent: #C7B447;       /* Dorado/Bronce para acentos y resaltar */
-    --color-text-light: #f8f9fa;   /* Blanco muy suave para texto en fondos oscuros */
-    --color-text-dark: #212529;    /* Negro casi puro para texto en fondos claros */
+    --color-accent: #C7B447;      /* Dorado/Bronce para acentos y resaltar */
+    --color-text-light: #f8f9fa;  /* Blanco muy suave para texto en fondos oscuros */
+    --color-text-dark: #212529;   /* Negro casi puro para texto en fondos claros */
     --color-background-light: #EAECEE; /* Gris muy claro para secciones de contenido */
-    --color-border: #99A9B4;       /* Gris azulado para bordes sutiles */
+    --color-border: #99A9B4;      /* Gris azulado para bordes sutiles */
     
     /* Tipografía Profesional (Montserrat para títulos, Open Sans para cuerpo) */
     --font-heading: 'Montserrat', sans-serif;
@@ -62,6 +62,14 @@ a {
     z-index: 1000;
     border-bottom: 3px solid var(--color-accent);
 }
+
+/* --- MODIFICACIÓN APLICADA PARA CENTRAR EL NAVBAR --- */
+.site-nav {
+    flex-grow: 1; /* Permite que NAV ocupe el espacio restante entre el logo y el borde */
+    display: flex; /* Habilita Flexbox */
+    justify-content: center; /* CENTRA horizontalmente el contenido (site-nav__list) */
+}
+/* ---------------------------------------------------- */
 
 .site-header__logo a {
     font-family: var(--font-heading);
@@ -452,6 +460,14 @@ a {
     
     .site-header { flex-direction: column; }
     .site-header__logo { margin-bottom: var(--spacing-sm); }
+    
+    /* Añadido para el comportamiento responsivo del centrado */
+    .site-nav {
+        width: 100%;
+        margin-bottom: var(--spacing-sm);
+    }
+    /* Fin de ajuste responsivo */
+    
     .site-nav__list { gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; }
     
     .content-section__title { font-size: 2.2rem; }
@@ -495,7 +511,7 @@ a {
 }
 
 .custom-icon {
-    width: 3rem !important;  /* Ajusta al tamaño de tus otros iconos */
+    width: 3rem !important;  /* Ajusta al tamaño de tus otros iconos */
     height: auto !important;
     display: block;
     margin: 0 auto 1rem auto;

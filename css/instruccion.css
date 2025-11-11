@@ -63,6 +63,14 @@ a {
     border-bottom: 3px solid var(--color-accent);
 }
 
+/* --- MODIFICACIÓN APLICADA PARA CENTRAR EL NAVBAR --- */
+.site-nav {
+    flex-grow: 1; /* Permite que NAV ocupe el espacio restante */
+    display: flex; /* Habilita Flexbox */
+    justify-content: center; /* CENTRA horizontalmente el contenido (site-nav__list) */
+}
+/* ---------------------------------------------------- */
+
 .site-header__logo a {
     font-family: var(--font-heading);
     font-size: 1.6rem;
@@ -327,15 +335,23 @@ a {
     
     .site-header { flex-direction: column; }
     .site-header__logo { margin-bottom: var(--spacing-sm); }
+    
+    /* Añadido para el centrado responsivo */
+    .site-nav {
+        width: 100%;
+        margin-bottom: var(--spacing-sm);
+    }
+    /* Fin de ajuste responsivo */
+    
     .site-nav__list { gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; }
 }
 
 @media (max-width: 850px) {
      .procedure-grid-wrapper {
-        /* Pasa a 1 columna en móvil/tablet pequeña */
-        grid-template-columns: 1fr;
-        max-width: 500px;
-    }
+         /* Pasa a 1 columna en móvil/tablet pequeña */
+         grid-template-columns: 1fr;
+         max-width: 500px;
+     }
 }
 
 @media (max-width: 600px) {
