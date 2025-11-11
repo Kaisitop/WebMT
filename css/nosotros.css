@@ -65,9 +65,9 @@ a {
 
 /* --- MODIFICACIÓN APLICADA PARA CENTRAR EL NAVBAR --- */
 .site-nav {
-    flex-grow: 1; /* Permite que NAV ocupe el espacio restante */
-    display: flex; /* Habilita Flexbox */
-    justify-content: center; /* CENTRA horizontalmente el contenido (site-nav__list) */
+    flex-grow: 1; 
+    display: flex; 
+    justify-content: center; 
 }
 /* ---------------------------------------------------- */
 
@@ -189,17 +189,57 @@ a {
 
 .team-list-section {
     background-color: var(--color-background-light);
+    padding: var(--spacing-md) 0;
 }
 
+/* ---------------------------------------------------- */
+/* MODIFICACIONES CLAVE PARA 3 ARRIBA Y 2 CENTRADOS ABAJO */
+/* ---------------------------------------------------- */
+
+/* Contenedor principal ahora usa Flexbox para apilar las filas */
 .team-grid-wrapper {
-    display: grid;
-    /* 3 columnas en escritorio */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column; /* Apila las filas verticalmente */
     gap: var(--spacing-md);
     padding: var(--spacing-md);
     max-width: 1000px;
     margin: 0 auto;
 }
+
+/* Estilo base para las filas */
+.team-row {
+    gap: var(--spacing-md);
+}
+
+/* Fila de TRES miembros (usa Grid para 3 columnas iguales) */
+.team-row--three {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Fila de DOS miembros (usa Flexbox para centrar los elementos) */
+.team-row--two {
+    display: flex;
+    justify-content: center; /* CENTRA los dos miembros en el espacio disponible */
+    gap: var(--spacing-md); /* Aplica el gap entre las dos tarjetas */
+    max-width: 700px; /* Limita el ancho para que el centrado sea visible */
+    margin: 0 auto; /* Centra la fila completa en el wrapper */
+}
+
+/* Asegura que las tarjetas en la fila de dos tengan un tamaño consistente */
+.team-row--two .member-card {
+    flex-basis: calc(50% - (var(--spacing-md) / 2)); /* 50% menos la mitad del gap */
+    max-width: 400px; /* Máximo por tarjeta */
+}
+
+/* Las tarjetas en la fila de tres no necesitan flex-basis específica si usan Grid */
+.team-row--three .member-card {
+    width: 100%;
+}
+/* ---------------------------------------------------- */
+/* FIN DE MODIFICACIONES CLAVE */
+/* ---------------------------------------------------- */
+
 
 .member-card {
     background-color: var(--color-text-light);
@@ -208,7 +248,7 @@ a {
     padding-bottom: var(--spacing-md);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
-    overflow: hidden; /* Para que la imagen se ajuste bien al borde redondeado */
+    overflow: hidden; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -219,7 +259,7 @@ a {
 
 .member-card__image-container {
     width: 100%;
-    height: 250px; /* Altura fija para uniformidad */
+    height: 250px; 
     overflow: hidden;
     margin-bottom: var(--spacing-sm);
 }
@@ -227,12 +267,12 @@ a {
 .member-photo {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+    object-fit: cover; 
     transition: transform 0.4s ease;
 }
 
 .member-card:hover .member-photo {
-    transform: scale(1.05); /* Pequeño zoom al pasar el ratón */
+    transform: scale(1.05); 
 }
 
 .member-card__name {
@@ -329,21 +369,29 @@ a {
     .site-header { flex-direction: column; }
     .site-header__logo { margin-bottom: var(--spacing-sm); }
     
-    /* Añadido para el centrado responsivo */
     .site-nav {
         width: 100%;
         margin-bottom: var(--spacing-sm);
     }
-    /* Fin de ajuste responsivo */
     
     .site-nav__list { gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; }
     
     .content-section__title { font-size: 2.2rem; }
     .content-section__subtitle { font-size: 1.1rem; }
     
-    .team-grid-wrapper {
-        /* Pasa a 2 columnas en tablet */
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* En Tablet, ambas filas pasan a 2 columnas */
+    .team-row--three,
+    .team-row--two {
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
+        margin: 0 auto;
+        justify-content: unset; /* Deshace el centrado de la fila dos en escritorio */
+    }
+    /* La fila de dos necesita que sus tarjetas se comporten como grid items aquí */
+    .team-row--two .member-card {
+        flex-basis: unset;
+        max-width: unset;
     }
 }
 
@@ -364,11 +412,16 @@ a {
         font-size: 0.9rem;
     }
     
-    .team-grid-wrapper {
-        /* Pasa a 1 columna en móvil */
+    /* En móvil, ambas filas pasan a 1 columna */
+    .team-row--three,
+    .team-row--two {
         grid-template-columns: 1fr;
+        max-width: 100%;
+        margin: 0;
+        padding: 0 var(--spacing-md);
     }
+    
     .member-card__image-container {
-        height: 300px; /* Aumenta un poco el tamaño de la foto en móvil */
+        height: 300px; 
     }
 }
